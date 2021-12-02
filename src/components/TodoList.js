@@ -1,7 +1,9 @@
 import TodoItem from "./TodoItem";
 
-const TodoList = () => {
-    const taskArr = ['coser', 'lavar', 'cantar']
+
+// props = {todos: Array}
+const TodoList = (props) => {
+  /*   const taskArr = ['coser', 'lavar', 'cantar'] */
 
  /*    if(props.checked === false){
         return null;
@@ -14,11 +16,16 @@ const TodoList = () => {
 		);
     } */
    
-    return (<div>
-        {taskArr.map((item, i) => {
+    return (
+    <div>
+       {/*  {taskArr.map((item, i) => {
             return <TodoItem task={item} id={i}/> 
-        })}
-    </div>)
+        })} */}
+        {props.todos.map(todo => (<TodoItem todo={todo} />))}
+           
+
+    </div>
+    );
     
     
   

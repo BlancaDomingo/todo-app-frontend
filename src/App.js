@@ -6,6 +6,25 @@ import TodoList from './components/TodoList';
 import Bar from './components/Bar';
 
 function App() {
+
+  const todos = [
+    {
+      text: 'Wäsche waschen',
+      done: false,
+    },
+    {
+      text: 'Kochen',
+      done: false,
+    },
+    {
+      text: 'Fernsehen',
+      done: true,
+    }
+  ];
+
+  const openTodos = todos.filter(todo => !todo.done)
+  const doneTodos = todos.filter(todo => todo.done)
+
   const addTask = (nameTask) => {
     alert(`Button geclickt. Task: ${nameTask}`)
   }
@@ -15,11 +34,12 @@ function App() {
       <Header />
       <TodoInput text="Fertig" 
       onButton={addTask}/>
+
       <h2>Todo</h2>
-      <TodoList />
+      <TodoList todos={openTodos} />
       <Bar / >      
       <h2>Erledigt</h2>
-      <TodoList />
+      <TodoList todos={doneTodos}/>
           
     </div>
   );

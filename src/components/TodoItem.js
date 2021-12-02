@@ -1,15 +1,19 @@
 import Finished from "./Finished";
 import DeleteTask from "./DeleteTask";
 
+// props { todo: {text: String, done: Boolean}}
 const TodoItem = (props) => {
+    //   { die heisst so = todo}
+    const { todo, done } = props;
     
     return (
         <div className="item">
             <div>
                 <input type="checkbox" id="myCheck" onclick={<Finished />}></input>
-                <label for="myCheck">{props.task}</label>
+                <span>{done}</span>
+                <label for="myCheck">{todo.text}</label>
             </div>
-            <button className="buttonX" onClick={<DeleteTask task={props.id} />}>x</button>
+               <button className="buttonX" onClick={<DeleteTask />}>x</button> 
 
         </div>
     )
