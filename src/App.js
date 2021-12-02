@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+
 import './App.scss';
+import Header from './components/Header'
+import TodoInput from './components/TodoInput';
+import TodoList from './components/TodoList';
+import Bar from './components/Bar';
 
 function App() {
+  const addTask = (nameTask) => {
+    alert(`Button geclickt. Task: ${nameTask}`)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Hello World
-        </a>
-      </header>
+      <Header />
+      <TodoInput text="Fertig" 
+      onButton={addTask}/>
+      <h2>Todo</h2>
+      <TodoList />
+      <Bar / >      
+      <h2>Erledigt</h2>
+      <TodoList />
+          
     </div>
   );
 }
 
 export default App;
+
+/* git remote add origin https://github.com/BlancaDomingo/todo-app.git */
