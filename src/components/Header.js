@@ -4,8 +4,9 @@ const Header = () => {
   
     return (
         <header>
-            <h1>My ToDo List</h1>           
-            
+            <h1>Meine ToDo Liste</h1>
+            <div className="image"></div>   
+
         </header>
     )
 }

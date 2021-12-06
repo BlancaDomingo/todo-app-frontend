@@ -1,22 +1,51 @@
- $color-white: white;
- $border-grey: 1px grey solid;
+ $color-white: white; 
+ $color-light-grey: rgb(236, 235, 235);
+ $color-grey: grey;
+ $color-blue: #008aa6;
+ $color-light-blue: #beece0;
+
+ $border-grey: 1px #008aa6 solid;
  
  
  .App {
   
-  border:$border-grey; 
-  width: 40em;
+  border-radius: 5px;
+  max-width: 35em;
   margin:0 auto;
   background-color: $color-white;
   padding: 2em;
+  
 }
 
+header {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  h1 {
+    
+    margin-top: 2em;
+  }
+  .image{
+    background-image: url(./tareas.png);
+    width: 12em;
+    height: 10em;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+
+
 .item {
-  border:$border-grey; 
+  
   padding: 1em;
   display: flex;
   justify-content: space-between;
   margin-top: 0.5em;
+  background-color: $color-light-blue;
+  border-radius: 5px;
+  
 }
 
 .bar {
@@ -24,5 +53,31 @@
   margin-top: 2em;
 }
 
+.buttonX {
+  background-color: $color-blue;
+  color: $color-white;
+  
+}
+
+.inputButton {
+  padding: 0.5em ;
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+  background-color: $color-light-blue;
+  border-radius: 5px;
+}
+
+.input {
+  padding: 0.5em ;
+  border-radius: 5px;
+  width: 86%;
+  margin-top: 1.5em;
+ 
+}
+
+hr {
+  color:$color-light-blue;
+  margin-top: 2em;
+}
 
 

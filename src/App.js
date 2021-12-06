@@ -3,9 +3,11 @@ import './App.scss';
 import Header from './components/Header'
 import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
-import Bar from './components/Bar';
+/* import { useState } from 'react'; */
 
 function App() {
+
+  /* const [todosList, setTodosList] = useState([]) */
 
   const todos = [
     {
@@ -20,24 +22,28 @@ function App() {
       text: 'Fernsehen',
       done: true,
     }
-  ];
+  ]; 
 
   const openTodos = todos.filter(todo => !todo.done)
   const doneTodos = todos.filter(todo => todo.done)
 
   const addTask = (nameTask) => {
+    /* setTodosList([...[{nameTask},false]]) */
     alert(`Button geclickt. Task: ${nameTask}`)
   }
 
   return (
     <div className="App">
+     
       <Header />
       <TodoInput text="Fertig" 
       onButton={addTask}/>
+      
 
       <h2>Todo</h2>
       <TodoList todos={openTodos} />
-      <Bar / >      
+      
+      <hr />     
       <h2>Erledigt</h2>
       <TodoList todos={doneTodos}/>
           

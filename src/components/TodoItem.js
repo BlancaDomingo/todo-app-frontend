@@ -1,19 +1,38 @@
-import Finished from "./Finished";
-import DeleteTask from "./DeleteTask";
+import { useState } from 'react';
+
 
 // props { todo: {text: String, done: Boolean}}
 const TodoItem = (props) => {
-    //   { die heisst so = todo}
-    const { todo, done } = props;
+    const [checked, setChecked] = useState(false);
+    const handleChange = () => {
+        setChecked(!checked);
+        console.log(!checked);
+      };
+
+
+
+
+  /*      { die heisst so = todo}
+    const { todo } = props; */
+
+    const deleteTask = (e) => {
+       
+        console.log('e',e);
+        e.target.parentElement.remove();
+    }
+
+ 
+
     
     return (
         <div className="item">
             <div>
-                <input type="checkbox" id="myCheck" onclick={<Finished />}></input>
-                <span>{done}</span>
-                <label for="myCheck">{todo.text}</label>
+                <input type="checkbox" id="myCheck"  checked={checked}
+          onChange={handleChange}></input>
+                
+                <label htmlFor="myCheck">{props.todo.text}</label>
             </div>
-               <button className="buttonX" onClick={<DeleteTask />}>x</button> 
+               <button className="buttonX" onClick={deleteTask}>x</button> 
 
         </div>
     )
