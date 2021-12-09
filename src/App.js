@@ -4,6 +4,7 @@ import Header from './components/Header'
 import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
 import { useReducer } from 'react';
+import { Footer } from './components/Footer';
 
 
 
@@ -81,18 +82,22 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="superdiv">
+      <div className="App">
 
-      <Header />
-      <TodoInput onButton={goToReducer} />
+        <Header />
+        <TodoInput onButton={goToReducer} />
 
 
-      <h2>Todo</h2>
-      <TodoList todos={todos.filter(todo => !todo.done)} onChange={goToReducer} />
+        <h2>Todo</h2>
+        <TodoList todos={todos.filter(todo => !todo.done)} onChange={goToReducer} />
 
-      <hr />
-      <h2>Erledigt</h2>
-      <TodoList todos={todos.filter(todo => todo.done)} onChange={goToReducer} />
+        <hr />
+        <h2>Erledigt</h2>
+        <TodoList todos={todos.filter(todo => todo.done)} onChange={goToReducer} />
+
+      </div>
+      <Footer />
     </div>
   );
 }
