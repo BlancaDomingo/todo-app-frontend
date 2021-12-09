@@ -1,36 +1,30 @@
-import { useState } from 'react';
-
-
-// props { todo: {text: String, done: Boolean}}
-const TodoItem = (props) => {
-    const [checked, setChecked] = useState(false);
-    const handleChange = () => {
-        setChecked(!checked);
-        console.log(!checked);
-      };
 
 
 
+// props todo={todo} key={index} dispatchTodos={props.dispatchTodos}
+const TodoItem = ({todo, onChange}) => {
+  
 
-  /*      { die heisst so = todo}
-    const { todo } = props; */
+    const handleChange = (e) => {
+      
+        e.preventDefault() 
+        onChange({type:'toggle', index: todo.index})       
+       
+      };  
 
     const deleteTask = (e) => {
-       
-        console.log('e',e);
-        e.target.parentElement.remove();
+           onChange({type:'delete', index: todo.index})   
+       /*  e.target.parentElement.remove(); */
     }
-
- 
 
     
     return (
         <div className="item">
             <div>
-                <input type="checkbox" id="myCheck"  checked={checked}
-          onChange={handleChange}></input>
+                <input type="checkbox" id="myCheck"  /* checked={checked} */
+          onClick={handleChange}></input>
                 
-                <label htmlFor="myCheck">{props.todo.text}</label>
+                <label htmlFor="myCheck">{todo.text}</label>
             </div>
                <button className="buttonX" onClick={deleteTask}>x</button> 
 

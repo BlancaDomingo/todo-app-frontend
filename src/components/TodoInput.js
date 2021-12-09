@@ -1,25 +1,19 @@
 import { useState } from 'react';
 
-// props = {text: String, onButton: addTask Function}
+// onButton={goToReducer}
 
-const TodoInput = ({text, onButton}) => {
+const TodoInput = ({ onButton }) => {
 
     const [userInput, setUserInput] = useState('');
-    const [nameTask, setNameTask] = useState([])
 
 
-    const inputTask = (e) => {
-        e.preventDefault() 
-        setNameTask([...nameTask, { task: userInput, done: false }])
-        onButton(nameTask);
-        console.log('..', nameTask);
-
-        setUserInput('') 
-    }
     const changeHandler = (e) => {
-
         setUserInput(e.target.value)
-        console.log(userInput);
+    }
+
+    const onClick = () => {
+        onButton({ type: 'add', payload: { text: userInput, index: new Date().getTime() } })
+        setUserInput('')
     }
 
     return (
@@ -27,14 +21,15 @@ const TodoInput = ({text, onButton}) => {
 
             <input
                 onChange={changeHandler}
-                value={userInput} 
+                value={userInput}
                 type="text"
                 className="input"
                 placeholder="Neue Aufgabe..." />
 
-            <button className="inputButton" onClick={inputTask}>{text}</button>
+            <button className="inputButton" onClick={onClick}>
+                Fertig</button>
 
-            {/* <p>"{nameTask}"Hinzufugen?</p> */}
+
         </div>
     )
 }

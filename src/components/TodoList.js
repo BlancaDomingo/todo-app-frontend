@@ -1,20 +1,21 @@
 import TodoItem from "./TodoItem";
 
 
-// props = {todos: Array}
-const TodoList = (props) => {
- 
+// onButton={goToReducer}
+const TodoList = ({todos, onChange}) => {
+    console.log('props.todos', todos);
    
     return (
     <div>       
-        {props.todos.map((todo, index) => (<TodoItem todo={todo} key={index}/>))}         
+        {todos.map((todo, i) => (<TodoItem todo={todo} key={i} onChange={onChange}/>))}         
 
     </div>
-    );
-    
+    ); 
     
   
 }
 
 export default TodoList;
+
+
 
