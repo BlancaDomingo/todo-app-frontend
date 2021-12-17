@@ -7,6 +7,9 @@
  $border-grey: 1px #008aa6 solid;
 
 
+ // bem css naming convention
+
+
 .superdiv {
   display: flex;
   flex-direction: column;
@@ -18,7 +21,8 @@
  .App {
   z-index:  1111;
   border-radius: 5px;
-  max-width: 35em;
+  max-width: 38em;
+  
   margin:0 auto;
   margin-top: 4em;
   background-color: $color-white;
@@ -32,9 +36,21 @@ header {
   justify-content: space-evenly;
   flex-wrap: wrap;
 
+  .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
   h1 {
     
-    margin-top: 2em;
+    margin: 0;
+  }
+  .date {
+    opacity: 0.5;
+    font-size: 1.3em;
+    margin-top: 0.5em;
+    
   }
   .image{
     background-image: url(./tareas.png);
@@ -49,46 +65,177 @@ header {
 
 .item {
   
-  padding: 1em;
+  padding: .5em 1em;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 0.5em;
   background-color: $color-light-blue;
   border-radius: 5px;
+  transition:all 0.3s;
   
+}
+ .item:hover {
+  /* transform: scale(1.05) */
+  background-color:#dcf7f0;
+} 
+ 
+.check {
+  width: 1em;
+  height: 1em;
+  padding: 0.1em;
+  text-align: center;
+  line-height: 0.8em;
+  vertical-align: center;
+  
+  border-radius: 50%;
+  border: $border-grey;
+  background-color: white;
+  color: white;
+  transition:all 0.3s;
+  
+ 
+}
+
+.checkHover {
+  background-color: $color-blue;
+ 
+}
+.label {
+  flex-grow: 2;
+  margin: 0 0 0 1em;
+  
+ 
+  
+}
+.labelTitel {
+  margin:0;
 }
 
 .bar {
   text-align: center;
   margin-top: 2em;
 }
+.buttons {
 
-.buttonX {
+  padding: 0.5em;
+  font-weight: bold;
+
+  text-align: center;
+  color: $color-blue;
+  background-color: $color-light-blue ;
+  border: 2px solid  $color-light-blue; 
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 0.5em;
+ 
+}
+.buttons:hover {
+  color: $color-light-blue;
   background-color: $color-blue;
-  color: $color-white;
-  
+  border: 2px solid  $color-blue; 
+ 
 }
 
-.inputButton {
-  padding: 0.5em ;
-  margin-left: 0.5em;
+// noch nicht so richtig
+.buttons:active {
+  opacity: 0.7;
+  color: $color-light-blue;
+  background-color: $color-blue;
+} 
+
+.buttonOn {
+  color: $color-light-blue;
+  background-color: $color-blue;
+  border: 2px solid  $color-blue; 
+}
+
+.buttonX {
+  
+  color: $color-blue;
+  padding: 0.1em 0.3em;
+  margin: 0;
+  transition:all 0.3s;
+  border-radius: 3px;
+  
+}
+.buttonX:hover {
+  background-color: white;
+}
+.buttons3 {
+  display: flex;
+  justify-content: center;
   margin-top: 0.5em;
-  background-color: $color-light-blue;
+}
+.inputButton {
+  padding: 0.5em 0.8em;
+  margin-left:27%;
+  margin-top: 0.5em;
+  background-color: $color-blue;
   border-radius: 5px;
+  font-weight: bold;
+  border: 2px solid  $color-blue;
+  color: white;  
+  
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+ 
+ 
+  
+}
+.inputButton:hover {
+  
+    color: $color-blue;
+    background-color: white;
+  
 }
 
 .input {
   padding: 0.5em ;
   border-radius: 5px;
-  width: 82%;
+  width: 96%;
   margin-top: 1.5em;
+  margin-bottom:.5em;
+  border: 2px solid $color-light-blue ;
+  transition:all 0.3s ease;
  
 }
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px $color-light-blue;
+}
+.showButtons,
+.showInLabel{
+  display: initial;
+
+}
+.showInLabel {
+  color:cadetblue;
+  font-size: 0.8em;
+
+}
+
+.noShowButtons,
+.noShowInLabel{
+  display: none;
+}
+
 
 hr {
   color:$color-light-blue;
   margin-top: 2em;
 }
+
+.linkHelp {
+  color: $color-blue;
+  float: right;
+  margin-top: 2em;
+}
+
+
+// footer.........................................................
 
 footer {
   position: relative;
@@ -100,6 +247,9 @@ footer {
  /*  display: flex;
   justify-content: center;
   align-items: center; */
+
+  
+  
 }
 footer .wave {
   position: absolute;
@@ -155,4 +305,3 @@ footer .wave {
     background-position-x: 1000px;
   }
 }
-

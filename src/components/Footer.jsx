@@ -1,4 +1,5 @@
 import React from 'react'
+import Quote from './Quote'
 
 export function Footer() {
     
@@ -10,7 +11,10 @@ export function Footer() {
                 <div className="wave" id="wave2"></div>
                 <div className="wave" id="wave3"></div>
                 <div className="wave" id="wave4"></div>
+                <Quote />
             </div>
         </footer>
     )
 }
+
+export default Footer
