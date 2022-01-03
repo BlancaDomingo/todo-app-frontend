@@ -119,7 +119,7 @@ header {
 .buttons {
 
   padding: 0.5em;
-  font-weight: bold;
+  /* font-weight: bold; */
 
   text-align: center;
   color: $color-blue;
@@ -174,7 +174,7 @@ header {
   margin-top: 0.5em;
   background-color: $color-blue;
   border-radius: 5px;
-  font-weight: bold;
+  font-weight: bold; 
   border: 2px solid  $color-blue;
   color: white;  
   
