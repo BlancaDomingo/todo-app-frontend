@@ -1,18 +1,52 @@
-import React from 'react'
+import React from "react";
+import { useState, useEffect } from 'react';
 
 function Quote() {
-    // funktioniert noch nicht
+    const [quote, setQuote] = useState("");
+    const [author, setAuthor] = useState("");
+  useEffect(() => {
+    const quoteAPI = `http://quotes.rest/qod.json`;
 
-    const newQuote = getNewQuote(); // setTimeout(getNewQuote, 5000)
-    function getNewQuote() {
-        const quote = 'quote';
-        return quote
-    }
-    return (
-        <div>
-            <p>„ {newQuote} “</p>
-        </div>
-    )
+    fetch(quoteAPI)
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res.contents.quotes[0].quote);
+            setQuote(res.contents.quotes[0].quote) 
+            setAuthor(res.contents.quotes[0].author) 
+        })
+       .catch(() => {
+        setQuote('Es erscheint immer unmöglich, bis es vollbracht ist')
+        setAuthor('Nelson Mandela') 
+          
+        
+        
+      });
+  }, []);
+
+  
+  return (
+    <div className="quote">
+      <h3 >„ {quote} “</h3>
+      <span className="quoteSpan">- {author} -</span>
+      {/* <span >
+        <img
+          src="https://theysaidso.com/branding/theysaidso.png"
+          height="20"
+          width="20"
+          alt="theysaidso.com"
+        />
+        <a className="quoteA"
+          href="https://theysaidso.com"
+          title="Powered by quotes from theysaidso.com"
+          target="_blank"
+          rel="noreferrer"
+          
+        >
+          They Said So®
+        </a>
+      </span> */}
+    </div>
+  );
 }
 
-export default Quote
+export default Quote;

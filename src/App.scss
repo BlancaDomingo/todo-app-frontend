@@ -243,7 +243,7 @@ footer {
   
   background:#ddbe5d;
   min-height: 100px;
-  padding: 20px 50px;
+  padding: 20px 0; 
  /*  display: flex;
   justify-content: center;
   align-items: center; */
@@ -304,4 +304,28 @@ footer .wave {
   {
     background-position-x: 1000px;
   }
+}
+
+// Quote.............................................................................
+.quote {
+  max-width: 40em;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.quoteSpan {
+  align-self: flex-end;
+}
+
+/* .quoteSpan {
+  z-index:50;
+  font-size:0.9em; 
+  font-weight: bold;
+} */
+.quoteA {
+  color: #ccc; 
+  margin-left: 4px; 
+  vertical-align: middle;
 }
