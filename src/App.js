@@ -3,17 +3,19 @@ import './App.scss';
 import Header from './components/Header'
 import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
-import { useReducer } from 'react';
+import { useReducer, useEffect } from 'react';
 import { Footer } from './components/Footer';
 
 import { Link } from "react-router-dom";
 // npm install react-router-dom@6 history@5
 
+//wenn npx create-react-app nicht funktioniert dann zuerst npx clear-npx-cache
 
+// npm run build .... kompilieren, optimieren  und komprimieren aber wenn fertig ist, für production
 
 
 function App() {
-
+/* 
   const todoInitial = [
     {
       index: 124566767,
@@ -40,8 +42,8 @@ function App() {
       done: false
     }
   ];
-
-
+ */
+ 
   const todosReducer = (array, action) => { // orig arr oder obj nicht bearbeiten => neue erstellen und return (asi render sich)
     // action.type / action.payload (Ladung)
 
@@ -83,20 +85,39 @@ function App() {
         const ind = action.index;
         return array.filter(todo => todo.index !== ind)
 
+      case 'restore':
+        return action.payload;
+
       default:
         return array;
     }
 
   }
 
-
-  const [todos, dispatchTodos] = useReducer(todosReducer, todoInitial)
+                                                        // todoInitial
+  const [todos, dispatchTodos] = useReducer(todosReducer, [])
 
   const goToReducer = (action) => {
     dispatchTodos(action)
   }
 
+  useEffect(() => { 
+    const localStorageStr = localStorage.getItem('todos')
+    let todosArr = []
+    if (localStorageStr) {
+      todosArr = JSON.parse(localStorageStr)
+    }  
+        
+    dispatchTodos({ type: 'restore', payload: todosArr }) 
+    
+    
+  }, []); // al principio mira si tengo algo en el storage
 
+  useEffect(() => {       
+    const todoString = JSON.stringify(todos) // in string para localStorage   
+    localStorage.setItem('todos',todoString) // in localS speichern
+       
+  }, [todos]);
 
   return (
     <div className="superdiv">

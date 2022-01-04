@@ -2,9 +2,10 @@ import React from 'react'
 
 function Quote() {
     // funktioniert noch nicht
-    const newQuote = setTimeout(getNewQuote, 5000)
+
+    const newQuote = getNewQuote(); // setTimeout(getNewQuote, 5000)
     function getNewQuote() {
-        const quote = 'quote'
+        const quote = 'quote';
         return quote
     }
     return (

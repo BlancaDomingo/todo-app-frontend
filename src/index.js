@@ -4,7 +4,7 @@ import './index.scss';
 import App from './App';
 import Help from './components/Help';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+// npm i react-router-dom para instalar este paquete 
 
 
 ReactDOM.render(
