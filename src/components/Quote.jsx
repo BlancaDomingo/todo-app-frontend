@@ -26,8 +26,8 @@ function Quote() {
   
   return (
     <div className="quote">
-      <h3 >„ {quote} “</h3>
-      <span className="quoteSpan">- {author} -</span>
+      {quote && <h3 >„ {quote} “</h3>}
+      { author && <span className="quoteSpan">- {author} -</span>}
       {/* <span >
         <img
           src="https://theysaidso.com/branding/theysaidso.png"

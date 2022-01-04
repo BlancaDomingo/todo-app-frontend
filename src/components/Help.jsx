@@ -18,7 +18,7 @@ const Help = () => {
 
       <p>odit eligendi atque voluptates, repellat sapiente blanditiis at perferendis vero tempore enim reprehenderit beatae. Nesciunt!</p>
 
-      <Link className="linkBack" to='/todoApp'>Zurück zum App</Link> 
+      <Link className="linkBack" to='/todoApp'>Zurück zur ToDo Liste</Link> 
 
 
     </div>
