@@ -5,7 +5,7 @@ function Quote() {
     const [quote, setQuote] = useState("");
     const [author, setAuthor] = useState("");
   useEffect(() => {
-    const quoteAPI = `http://quotes.rest/qod.json`;
+    const quoteAPI = `https://quotes.rest/qod.json`;
 
     fetch(quoteAPI)
       .then((res) => res.json())
