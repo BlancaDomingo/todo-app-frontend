@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+
 // onButton={goToReducer}
 
 const TodoInput = ({ onButton }) => {
@@ -17,14 +18,13 @@ const TodoInput = ({ onButton }) => {
 
   const onClickButton = () => {
     onButton({
-      type: "add",
-      payload: {
-        text: userInput,
-        index: new Date().getTime(),
-        remember: remember,
-        repeat: repeat,
-        date: date,
-      },
+
+      text: userInput,
+      //index: new Date().getTime(),
+      remember: remember,
+      repeat: repeat,
+      date: date
+
     });
     setUserInput("");
     setRemember(false);

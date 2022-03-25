@@ -1,4 +1,4 @@
- $color-white: white; 
+$color-white: white; 
  $color-light-grey: rgb(236, 235, 235);
  $color-grey: grey;
  $color-blue: #008aa6;
@@ -24,7 +24,7 @@
   max-width: 38em;
   
   margin:0 auto;
-  // margin-top: 4em;
+  margin-top: 4em;
   background-color: $color-white;
   padding: 2em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
@@ -171,7 +171,7 @@ header {
 .inputButton {
   padding: 0.5em 0.8em;
   margin-left:27%;
-  margin-top: 0.5em;
+  margin-top: 1em;
   background-color: $color-blue;
   border-radius: 5px;
   font-weight: bold; 
@@ -193,10 +193,11 @@ header {
 }
 
 .input {
+  cursor: pointer;
   padding: 0.5em ;
   border-radius: 5px;
   width: 96%;
-  margin-top: 1.5em;
+  margin-top: 1em;
   margin-bottom:.5em;
   border: 2px solid $color-light-blue ;
   transition:all 0.3s ease;
@@ -206,6 +207,8 @@ header {
   outline: none;
   box-shadow: 0 0 0 4px $color-light-blue;
 }
+
+
 .showButtons,
 .showInLabel{
   display: initial;
@@ -228,9 +231,8 @@ hr {
   margin-top: 2em;
 }
 
-.linkHelp {
+.linkHelp{
   color: $color-blue;
   float: right;
   margin-top: 2em;
 }
-

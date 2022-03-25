@@ -1,5 +1,6 @@
 import React from 'react'
 import Quote from './Quote'
+import './Footer.scss'
 
 export function Footer() {
     
