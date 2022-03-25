@@ -11,14 +11,10 @@ import {
 } from "../functions/DatabaseFunctions";
 
 function TodosPage({ token, userId }) {
-
-  const [todos, setTodos] = useState([])
-
+  const [todos, setTodos] = useState([]);
 
   function createTodo(payload) {
-   
     addTodoToDataBase(payload, token, userId).then((res) => {
-        
       if (res.message === "success") {
         setTodos(res.data);
       }
@@ -26,7 +22,6 @@ function TodosPage({ token, userId }) {
   }
 
   function toggleTodo(todoId) {
-    
     toggleDoneToDataBase(todoId, token, userId).then((res) => {
       if (res.message === "success") {
         setTodos(res.data);
@@ -35,7 +30,6 @@ function TodosPage({ token, userId }) {
   }
 
   function deleteTodo(todoId) {
-  
     deleteTodoFromDataBase(todoId, token, userId).then((res) => {
       if (res.message === "success") {
         setTodos(res.data);
@@ -51,8 +45,6 @@ function TodosPage({ token, userId }) {
     });
   }, []);
 
-
-
   return (
     <>
       <TodoInput onButton={createTodo} />
@@ -60,7 +52,6 @@ function TodosPage({ token, userId }) {
       {todos.length > 0 && <h2>Todo</h2>}
       <TodoList
         todos={todos.filter((todo) => !todo.done)}
-
         toggleTodo={toggleTodo}
         deleteTodo={deleteTodo}
         greenOn={false}
@@ -70,8 +61,6 @@ function TodosPage({ token, userId }) {
       {todos.length > 0 && <h2>Erledigt</h2>}
       <TodoList
         todos={todos.filter((todo) => todo.done)}
-
-
         toggleTodo={toggleTodo}
         deleteTodo={deleteTodo}
         greenOn={true}

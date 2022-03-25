@@ -1,16 +1,16 @@
-const TodoItem = ({ todo, toggleTodo,  deleteTodo, greenOn }) => {
+const TodoItem = ({ todo, toggleTodo, deleteTodo, greenOn }) => {
   const handleChange = (e) => {
     e.preventDefault();
     toggleTodo(todo._id);
   };
 
   const deleteTask = (e) => {
-    deleteTodo(todo._id);    
+    deleteTodo(todo._id);
   };
 
   return (
     <div
-      className="item" /* onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} */
+      className="item"
     >
       <div
         onClick={handleChange}

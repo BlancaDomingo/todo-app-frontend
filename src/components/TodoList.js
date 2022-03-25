@@ -9,7 +9,7 @@ const TodoList = ({ todos, toggleTodo, deleteTodo, greenOn }) => {
       {todos.map((todo, i) => (
         <TodoItem
           todo={todo}
-          key={i}         
+          key={i}
           toggleTodo={toggleTodo}
           deleteTodo={deleteTodo}
           greenOn={greenOn}
