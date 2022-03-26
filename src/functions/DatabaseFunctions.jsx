@@ -36,7 +36,6 @@ export async function addTodoToDataBase(payload, token, userId) {
 
   const result = await fetch(`${TODOS_PATH}/${userId}`, options);
   const body = await result.json();
-  console.log("body", body);
   return body;
 }
 
@@ -53,7 +52,6 @@ export async function toggleDoneToDataBase(todoId, token, userId) {
 
   const result = await fetch(`${TODOS_PATH}/${userId}/${todoId}`, options);
   const body = await result.json();
-  console.log("bodyToggle", body);
   return body;
 }
 
@@ -70,6 +68,5 @@ export async function deleteTodoFromDataBase(todoId, token, userId) {
 
   const result = await fetch(`${TODOS_PATH}/${userId}/${todoId}`, options);
   const body = await result.json();
-  console.log("deleteTodo", body);
   return body;
 }

@@ -2,8 +2,6 @@ import TodoItem from "./TodoItem";
 
 // onButton={goToReducer}
 const TodoList = ({ todos, toggleTodo, deleteTodo, greenOn }) => {
-  console.log("props.todos", todos);
-
   return (
     <div>
       {todos.map((todo, i) => (

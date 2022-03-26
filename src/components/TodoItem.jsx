@@ -9,9 +9,7 @@ const TodoItem = ({ todo, toggleTodo, deleteTodo, greenOn }) => {
   };
 
   return (
-    <div
-      className="item"
-    >
+    <div className="item">
       <div
         onClick={handleChange}
         className={greenOn ? "check checkHover" : "check"}

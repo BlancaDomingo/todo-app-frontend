@@ -26,16 +26,11 @@ export default function LoginPage({ onLogin }) {
     };
 
     const result = await fetch(USERS_PATH + "/login", options);
-    console.log("result", result);
-    console.log("email", email, password);
     const body = await result.json();
-    console.log("body", body);
 
-    // if (result.status === 200) {
     if (body.message === "success") {
       const { token, user } = body.data;
-      console.log("mein token:", token);
-      console.log("Login succesfull");
+
       onLogin({
         user,
         token,

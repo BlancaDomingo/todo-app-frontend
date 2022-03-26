@@ -47,7 +47,7 @@ function TodosPage({ token, userId }) {
 
   return (
     <>
-      <TodoInput onButton={createTodo} />
+      <TodoInput createTodo={createTodo} />
 
       {todos.length > 0 && <h2>Todo</h2>}
       <TodoList
@@ -75,4 +75,4 @@ function TodosPage({ token, userId }) {
 
 export default TodosPage;
 
-/* git remote add origin https://github.com/BlancaDomingo/todo-app.git */
+
