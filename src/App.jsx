@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import RegisterPage from "./pages/RegisterPage";
 import LoggedIn from "./components/LoggedIn";
+import './scss/App.scss';
 
 function App() {
   const [token, setToken] = useState("");
@@ -23,9 +24,9 @@ function App() {
   };
   return (
     <>
-
+       <LoggedIn userName={userName} />
       <div className="superdiv">
-        {token.length > 0 && <LoggedIn userName={userName} />}
+       
         <div className="App">
           <Header />
           <Routes>

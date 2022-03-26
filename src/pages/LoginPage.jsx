@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import "./RegisterPage.scss";
+import "../scss/LoginPage.scss";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const USERS_PATH = BACKEND_URL + "/users";
 
-export default function RegisterPage({ onLogin }) {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+export default function LoginPage({ onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -23,10 +22,10 @@ export default function RegisterPage({ onLogin }) {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ firstName, lastName, email, password }),
+      body: JSON.stringify({ email, password }),
     };
 
-    const result = await fetch(USERS_PATH + "/register", options);
+    const result = await fetch(USERS_PATH + "/login", options);
     console.log("result", result);
     console.log("email", email, password);
     const body = await result.json();
@@ -50,23 +49,12 @@ export default function RegisterPage({ onLogin }) {
   return (
     <>
       <form onSubmit={submitHandler}>
-        <h3>Konto erstellen</h3>
-
-        <input
-          type="text"
-          value={firstName}
-          onInput={(e) => setFirstName(e.target.value)}
-          className="inputLogin"
-          placeholder="Vorname..."
-        />
-
-        <input
-          type="text"
-          value={lastName}
-          onInput={(e) => setLastName(e.target.value)}
-          className="inputLogin"
-          placeholder="Nachname..."
-        />
+        <h3>
+          Einloggen oder{" "}
+          <Link className="linkRegister" to="/register">
+            Konto erstellen
+          </Link>
+        </h3>
 
         <input
           type="text"
@@ -85,7 +73,7 @@ export default function RegisterPage({ onLogin }) {
         />
 
         <div>
-          <button className="inputButtonLogin">Registrieren</button>
+          <button className="inputButtonLogin">Einloggen</button>
         </div>
         <p className="errorLogin">{error}</p>
       </form>

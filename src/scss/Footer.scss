@@ -1,12 +1,11 @@
-
-// footer.........................................................
+@use 'variables.scss';
 
 footer {
     position: relative;
     width: 100%;
    
     
-    background:#ddbe5d;
+    background: variables.$color-senf;
     min-height: 100px;
     padding: 20px 0; 
    /*  display: flex;

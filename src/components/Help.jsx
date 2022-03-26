@@ -1,12 +1,11 @@
 import React from 'react'
-import { Footer } from './Footer'
+
 import { Link } from "react-router-dom";
 
 const Help = () => {
     
 
-    return (  <div className="superdiv">
-    <div className="App">
+    return (  <>
         <h2>Hilfe</h2>
       <p>A nam itaque maiores architecto consequatur sunt, odit eligendi atque voluptates, repellat sapiente blanditiis at perferendis vero tempore enim reprehenderit beatae. Nesciunt!</p>
 
@@ -21,11 +20,7 @@ const Help = () => {
       <Link className="linkBack" to='/todoApp'>Zurück zur ToDo Liste</Link> 
 
 
-    </div>
-    <Footer />
-
-    
-  </div> 
+    </>
         
         
     )

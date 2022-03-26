@@ -1,0 +1,159 @@
+@use "variables.scss";
+
+// <todoItem />
+.item {
+  padding: 0.5em 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5em;
+  background-color: variables.$color-light-blue;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.item:hover {
+  /* transform: scale(1.05) */
+  background-color: variables.$color-mint;
+}
+
+.check {
+  width: 1em;
+  height: 1em;
+  padding: 0.1em;
+  text-align: center;
+  line-height: 0.8em;
+  vertical-align: center;
+
+  border-radius: 50%;
+  border: variables.$border-grey;
+  background-color: variables.$color-white;
+  color: variables.$color-white;
+  transition: all 0.3s;
+}
+
+.checkHover {
+  background-color: variables.$color-blue;
+}
+.label {
+  flex-grow: 2;
+  margin: 0 0 0 1em;
+}
+.labelTitel {
+  margin: 0;
+}
+
+.bar {
+  text-align: center;
+  margin-top: 2em;
+}
+.buttons {
+  padding: 0.5em;
+  /* font-weight: bold; */
+
+  text-align: center;
+  color: variables.$color-blue;
+  background-color: variables.$color-light-blue;
+  border: 2px solid variables.$color-light-blue;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 0.5em;
+}
+.buttons:hover {
+  color: variables.$color-light-blue;
+  background-color: variables.$color-blue;
+  border: 2px solid variables.$color-blue;
+}
+
+// noch nicht so richtig
+.buttons:active {
+  opacity: 0.7;
+  color: variables.$color-light-blue;
+  background-color: variables.$color-blue;
+}
+
+.buttonOn {
+  color: variables.$color-light-blue;
+  background-color: variables.$color-blue;
+  border: 2px solid variables.$color-blue;
+}
+
+.buttonX {
+  color: variables.$color-blue;
+  padding: 0.1em 0.3em;
+  margin: 0;
+  transition: all 0.3s;
+  border-radius: 3px;
+}
+.buttonX:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
+
+// <TodoInput />
+.buttons3 {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5em;
+}
+.inputButton {
+  padding: 0.5em 0.8em;
+  margin-left: 27%;
+  margin-top: 1em;
+  background-color: variables.$color-blue;
+  border-radius: 5px;
+  font-weight: bold;
+  border: 2px solid variables.$color-blue;
+  color: variables.$color-white;
+
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.inputButton:hover {
+  transform: scale(1.1);
+  color: variables.$color-blue;
+  background-color: variables.$color-white;
+}
+
+.input {
+  cursor: pointer;
+  padding: 0.5em;
+  border-radius: 5px;
+  width: 96%;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  border: 2px solid variables.$color-light-blue;
+  transition: all 0.3s ease;
+}
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px variables.$color-light-blue;
+}
+
+.showButtons,
+.showInLabel {
+  display: initial;
+}
+.showInLabel {
+  color: variables.$color-cadetblue;
+  font-size: 0.8em;
+}
+
+.noShowButtons,
+.noShowInLabel {
+  display: none;
+}
+
+hr {
+  color: variables.$color-light-blue;
+  margin-top: 2em;
+}
+
+// <Help />
+.linkHelp {
+  color: variables.$color-blue;
+  float: right;
+  margin-top: 2em;
+}

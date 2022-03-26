@@ -1,4 +1,4 @@
-import "./TodosPage.scss";
+import "../scss/TodosPage.scss";
 import TodoInput from "../components/TodoInput";
 import TodoList from "../components/TodoList";
 import { useState, useEffect } from "react";

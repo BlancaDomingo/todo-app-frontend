@@ -1,0 +1,51 @@
+@use 'variables.scss';
+
+.superdiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 93vh;
+}
+
+.App {
+  z-index: 1111;
+  border-radius: 5px;
+  max-width: 38em;
+  margin: 0 auto;
+  background-color: variables.$color-white;
+  padding: 2em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+// <Header />
+header {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  h1 {
+    
+    margin: 0;
+  }
+  .date {
+    opacity: 0.5;
+    font-size: 1.3em;
+    margin-top: 0.5em;
+    
+  }
+  .image{
+    background-image: url(./tareas.png);
+    width: 12em;
+    height: 10em;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
